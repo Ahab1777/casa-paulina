@@ -8,6 +8,9 @@
 
 }
 
+body {
+    /* position: relative; */
+}
 
 /* header */
 
@@ -146,6 +149,34 @@
     }
 
 }
+
+/* jumbotron */
+
+.jumbotron {
+    position: relative;
+    background-color: #000;
+    
+}
+
+.jumbotron-inner {
+    /* height: 700px; */
+    /* width: 100%; */
+    position: absolute;
+    top: 70px;
+    /* background-color: #d62222; */
+}
+
+@media (max-witdh: 576px) {
+    .jumbotron-inner {
+        top: 40px;
+    }
+}
+
+.jumbotron-inner img {
+    height: auto;
+    width: 100vw;
+}
+
 
 /* cores */
 
