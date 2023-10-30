@@ -186,23 +186,53 @@ body {
 
 /* calendário & descrição */
 
-.calendar {
+.calendar-grid {
     height: 300px;
-}
-
-
-.calendar-container {
     display: grid;
     grid-template-rows: 300px 300px;
     grid-template-columns: 1fr 2fr;
 }
 
-.calendar-item {
-
+.calendar-container {
+    
 }
 
-.intro-item {
 
+.iframe {
+    background-color:#df9e9e;
+    height: 290px;
+    margin: 10px;
+    margin: 0;
+    
+}
+
+.intro {
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    text-align: justify;
+    margin: 10px;
+    position: relative;
+
+    
+}
+
+.intro-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+        
+}
+
+@media (max-width: 750px) {
+    .calendar-container{
+     grid-template-columns: 1fr;   
+
+    }
+    .intro{
+        grid-row: 1
+    }
 }
 
 
