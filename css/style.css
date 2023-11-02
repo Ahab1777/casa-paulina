@@ -324,28 +324,38 @@ body {
 
 .carousel {
     width: 100%;
-    height: max-content;
     position: relative;
-    min-height: max-content;
+    
     
 }
 
-.carousel. > ul {
+#carousel-frame {
+    /* creating this "ghost" image was the only way I found to make the carousel frame respect the height of the images */
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
+.carousel > ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    
+    height: 100%;
 }
+
 
 .slide {
     position: absolute;
     inset: 0;
     opacity: 0;
+    height: max-content;
+    z-index: 2;
 }
 
 .slide > img {
     display: block;
-    width: 100vw;
+    width: 100%;
     height: auto;
     
 }
@@ -360,8 +370,8 @@ body {
     position: absolute;
     background: none;
     border: none;
-    font-size: 4rem;
-    z-index: 2;
+    font-size: 3rem;
+    z-index: 3;
     top: 50%;
     transform: translateY(-50%);
     color: rgba(255, 255, 255, 0.5);

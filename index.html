@@ -66,15 +66,16 @@
     <div class="tour-grid">
         <a href="/tour.html" class="tour"> Faça um tour pela casa!</a>
     </div>
-
+    
     <!-- galeria em grid -->
-
+    
     <div class="carousel-grid">
-        <div class="carousel">
-            <button class="carousel-button prev">&#8249;</button>
-            <button class="carousel-button next">&#8250;</button>
-            <ul>
-                <li class="slide" data-active="">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button="prev">&#8249;</button>
+            <button class="carousel-button next" data-carousel-button="next">&#8250;</button>
+            <img id="carousel-frame" src="img\Fotos profissionais\_MG_1955.jpg" alt="">
+            <ul data-slides>
+                <li class="slide" data-active>
                     <img id="pic-1" src="img\Fotos profissionais\_MG_1756.jpg" alt="">
                 </li>
                 <li class="slide">
@@ -104,7 +105,7 @@
             </ul>
         </div>
     </div>
-
+    
     <div class="weather-api"></div>
     <!-- <div class="galeria-grid">
         <div class="slider-wrapper">
