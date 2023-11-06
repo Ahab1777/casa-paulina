@@ -246,7 +246,7 @@ body {
 .estrutura-grid {
     height: 100%;
     display: grid;
-    grid-template-rows: 300px;
+    grid-template-rows: auto;
     grid-template-columns: 1fr 1fr 1fr;
     position: relative;
     
@@ -314,87 +314,135 @@ body {
     
 }
 
-/* --------------------------galeria carrossel------------------------ */
+/* --------------------------galeria------------------------ */
+/* --------------carrossel---------------- */
 
-.carousel-grid {
-    /* overflow: hidden; */
+
+@media (min-width: 751px){
+
+    .carousel{
+        display: none;
+    }
+
+    .grid-grid {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .grid-grid > img {
+        width: 100%;
+        padding: ;
+    }
+
+    #pic-1 {
+        grid-area: 1 / 1 / 4 / 4;
+    }
     
 }
 
 
-.carousel {
-    width: 100%;
-    position: relative;
+@media (max-width: 750px) {
+    
+    .grid-grid {
+        display: none;
+    }
+    
+    .carousel-grid {
+        /* overflow: hidden; */
+        
+    }
     
     
-}
-
-#carousel-frame {
-    /* creating this "ghost" image was the only way I found to make the carousel frame respect the height of the images */
-    display: block;
-    width: 100%;
-    height: auto;
-    opacity: 1;
-}
-
-.carousel > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    height: 100%;
-}
-
-
-.slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    height: max-content;
-    z-index: 2;
-}
-
-.slide > img {
-    display: block;
-    width: 100%;
-    height: auto;
+    .carousel {
+        width: 100%;
+        position: relative;
+        
+        
+    }
     
+    #carousel-frame {
+        /* creating this "ghost" image was the only way I found to make the carousel frame respect the height of the images */
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 1;
+    }
+    
+    .carousel > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 100%;
+    }
+    
+    
+    .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        height: max-content;
+        z-index: 2;
+        transition: opacity 200ms ease-in-out;
+        transition-delay: 200ms;
+    }
+    
+    .slide > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        
+    }
+    
+    
+    
+    .slide[data-active] {
+        opacity: 1;
+        z-index: 1;
+        transition: 0ms;
+    }
+    
+    .carousel-button {
+        position: absolute;
+        background: none;
+        border: none;
+        font-size: 3rem;
+        z-index: 3;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        border-radius: .25rem;
+        padding: 0 .5rem;
+        background-color: rgba(0, 0, 0, .1);
+    }
+    
+    .carousel-button:hover,
+    .carousel-button:focus {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .carousel-button:focus {
+        outline: 1px solid black;
+    }
+    
+    .carousel-button.prev {
+        left: 1rem;
+    }
+    
+    .carousel-button.next {
+        right: 1rem;
+    }
+
 }
 
 
 
-.slide[data-active] {
-    opacity: 1;
-}
 
-.carousel-button {
-    position: absolute;
-    background: none;
-    border: none;
-    font-size: 3rem;
-    z-index: 3;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    border-radius: .25rem;
-    padding: 0 .5rem;
-    background-color: rgba(0, 0, 0, .1);
-}
+/* ------------------grid------------------------ */
 
-.carousel-button:hover,
-.carousel-button:focus {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.2);
-}
 
-.carousel-button:focus {
-    outline: 1px solid black;
-}
 
-.carousel-button.prev {
-    left: 1rem;
-}
 
-.carousel-button.next {
-    right: 1rem;
-}
+
