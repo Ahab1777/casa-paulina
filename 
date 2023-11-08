@@ -1,0 +1,95 @@
+[1mdiff --git a/css/style.css b/css/style.css[m
+[1mindex 87110b5..26f8b3c 100644[m
+[1m--- a/css/style.css[m
+[1m+++ b/css/style.css[m
+[36m@@ -174,7 +174,7 @@[m [mbody {[m
+ /* hero */[m
+ [m
+ .hero {[m
+[31m-    [m
+[32m+[m[32m    z-index: 1;[m
+ }[m
+ [m
+ .hero-image {[m
+[36m@@ -201,16 +201,24 @@[m [mbody {[m
+ /* -----------calendário & descrição--------------------- */[m
+ [m
+ .calendar-grid {[m
+[31m-    height: 300px;[m
+[32m+[m[32m    height: fit-content;[m
+     display: grid;[m
+[31m-    grid-template-rows: 300px 300px;[m
+[32m+[m[32m    grid-template-rows: autp-fit;[m
+     grid-template-columns: 1fr 2fr;[m
+ }[m
+ [m
+[31m-.calendar-container {[m
+[32m+[m[32m.calendar-item {[m
+[32m+[m[32m    align-self: center;[m
+[32m+[m[32m    justify-self: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32miframe {[m
+     [m
+ }[m
+ [m
+[32m+[m[32m.calaner-header {[m
+[32m+[m[32m    display: none;[m
+[32m+[m[32m}[m
+ [m
+ .iframe {[m
+     background-color:#df9e9e;[m
+[36m@@ -556,4 +564,5 @@[m [mset to auto-fit. */[m
+ [m
+ [m
+ [m
+[32m+[m[32m/* calendário */[m
+ [m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 4638755..d0e9945 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -37,9 +37,12 @@[m
+     [m
+     <!-- calendário | descrição -->[m
+ [m
+[32m+[m[41m    [m
+[32m+[m[41m    [m
+[32m+[m
+     <div class="calendar-grid calendar-container">[m
+         <div class="calendar-item">[m
+[31m-            <div class="iframe"> Calendar Space</div>[m
+[32m+[m[32m            <!-- <style type="text/css">:root{--scolor: #71C2F7;}.grupzring{display: inline-block; width: 200px; height: 200px; position: absolute; margin: auto; top: 0; right: 0; bottom: 0; left: 0;}.grupzring div{box-sizing: border-box; display: block; width: 200px; height: 200px; position: absolute; margin: auto; top: 0; right: 0; bottom: 0; left: 0; margin: 0px; border: 6px solid var(--scolor); border-radius: 50%; animation: grupzring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite; border-color: var(--scolor) transparent transparent transparent;}.grupzring div:nth-child(1){animation-delay: -0.45s;}.grupzring div:nth-child(2){animation-delay: -0.3s;}.grupzring div:nth-child(3){animation-delay: -0.15s;}@keyframes grupzring{0%{transform: rotate(0deg);}100%{transform: rotate(360deg);}}</style><div id="gcalspin2" class="grupzring"><div></div><div></div><div></div><div></div></div><iframe src=https://grupz.com/avail-calendar-medium-18/1699445853718x472789098785931260?legend=no style='border:none;' scrolling='no' width='300' height='360' align='center' onload=document.getElementById('gcalspin2').style.display='none';></iframe> -->[m
+         </div>[m
+         <div class="intro">[m
+             <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga itaque numquam harum atque reiciendis eum aspernatur, saepe, inventore reprehenderit possimus eaque dicta voluptates, quis officia beatae. Mollitia ratione eaque deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae ea vel eum nostrum molestias ab est, atque maiores quibusdam repellendus eveniet consectetur, sed fugiat suscipit praesentium incidunt veniam ratione!</p>[m
+[36m@@ -146,7 +149,7 @@[m
+             <a class="gallery-link" href="/gallery">Veja mais fotos</a>[m
+             <img id="button-background" src="img\Fotos profissionais\_MG_2098.jpg" alt="">[m
+         </div>[m
+[31m-    </div>[m
+[32m+[m[32m    </div>[m[41m [m
+ [m
+ [m
+ [m
+[36m@@ -155,6 +158,9 @@[m
+     [m
+     <!-- API de clima -->[m
+ [m
+[32m+[m[32m    <a class="weatherwidget-io" href="https://forecast7.com/pt/n27d60n48d55/florianopolis/" data-label_1="Florianópolis" data-label_2="Clima" data-font="Roboto Slab" data-icons="Climacons Animated" data-days="5" data-theme="clear" >Florianópolis Clima</a>[m
+[32m+[m
+[32m+[m
+     <!-- mapa -->[m
+ [m
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>[m
+[1mdiff --git a/js/app.js b/js/app.js[m
+[1mindex 85ccaf0..b2f63fe 100644[m
+[1m--- a/js/app.js[m
+[1m+++ b/js/app.js[m
+[36m@@ -25,4 +25,6 @@[m [mbuttons.forEach(button => {[m
+     })[m
+ })[m
+ [m
+[32m+[m[32m// weather widget[m
+ [m
+[32m+[m[32m!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');[m

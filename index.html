@@ -39,7 +39,7 @@
 
     <div class="calendar-grid calendar-container">
         <div class="calendar-item">
-            <div class="iframe"> Calendar Space</div>
+            <style type="text/css">:root{--scolor: #71C2F7;}.grupzring{display: inline-block; width: 200px; height: 200px; position: absolute; margin: auto; top: 0; right: 0; bottom: 0; left: 0;}.grupzring div{box-sizing: border-box; display: block; width: 200px; height: 200px; position: absolute; margin: auto; top: 0; right: 0; bottom: 0; left: 0; margin: 0px; border: 6px solid var(--scolor); border-radius: 50%; animation: grupzring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite; border-color: var(--scolor) transparent transparent transparent;}.grupzring div:nth-child(1){animation-delay: -0.45s;}.grupzring div:nth-child(2){animation-delay: -0.3s;}.grupzring div:nth-child(3){animation-delay: -0.15s;}@keyframes grupzring{0%{transform: rotate(0deg);}100%{transform: rotate(360deg);}}</style><div id="gcalspin2" class="grupzring"><div></div><div></div><div></div><div></div></div><iframe src=https://grupz.com/avail-calendar-medium-18/1699445853718x472789098785931260?legend=no style='border:none;' scrolling='no' width='300' height='360' align='center' onload=document.getElementById('gcalspin2').style.display='none';></iframe>>
         </div>
         <div class="intro">
             <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga itaque numquam harum atque reiciendis eum aspernatur, saepe, inventore reprehenderit possimus eaque dicta voluptates, quis officia beatae. Mollitia ratione eaque deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae ea vel eum nostrum molestias ab est, atque maiores quibusdam repellendus eveniet consectetur, sed fugiat suscipit praesentium incidunt veniam ratione!</p>
@@ -152,10 +152,18 @@
 
     <div class="weather-api">sdfsdf</div>
 
-    
-    <!-- API de clima -->
+    <!-- clima e localização -->
 
-    <!-- mapa -->
+    <div class="map-weather">
+        <!-- API de clima -->
+        <a class="weatherwidget-io" href="https://forecast7.com/pt/n27d60n48d55/florianopolis/" data-label_1="Florianópolis" data-label_2="Clima" data-font="Roboto Slab" data-icons="Climacons Animated" data-days="5" data-theme="clear" >Florianópolis Clima</a>
+    
+        <!-- mapa -->
+    
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.31278562472!2d-48.506241325299335!3d-27.676725976200004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95273bc8943ac54f%3A0x176376c958e20d57!2sCasa%20Paulina!5e0!3m2!1sen!2sbr!4v1699453242263!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

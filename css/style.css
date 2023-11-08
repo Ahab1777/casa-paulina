@@ -7,6 +7,8 @@
     
 }
 
+
+
 @keyframes picIntro {
     from {
         opacity: 0;
@@ -28,10 +30,10 @@
 
 }
 
-body {
-    /* margin: 0; */
-    /* max-width: 100% */
-}
+/* body {
+    margin: 0;
+    max-width: 100%
+} */
 
 /* header */
 
@@ -173,9 +175,7 @@ body {
 
 /* hero */
 
-.hero {
-    
-}
+
 
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos profissionais/_MG_2054.jpg");
@@ -191,9 +191,7 @@ body {
                 
     }
 
-    .hero {
-        
-    }
+    
 }
     
 
@@ -201,15 +199,18 @@ body {
 /* -----------calendário & descrição--------------------- */
 
 .calendar-grid {
-    height: 300px;
+    
     display: grid;
-    grid-template-rows: 300px 300px;
+    /* grid-template-rows: repeat(auto-fit, minmax(400px, 1fr)); */
+    grid-template-rows: minmax(400px, 1fr);
     grid-template-columns: 1fr 2fr;
 }
 
-.calendar-container {
-    
+.calendar-item {
+    align-self: center;   
+    justify-self: center;
 }
+
 
 
 .iframe {
@@ -234,6 +235,7 @@ body {
 .intro-text {
     text-align: center;
     position: absolute;
+    margin-bottom: 0px;
     top: 50%;
     transform: translateY(-50%);
         
@@ -248,9 +250,9 @@ body {
         grid-row: 1
     }
 
-    .calendar-grid {
+    /* .calendar-grid {
         height: 600px;
-    }
+    } */
 }
 
 
@@ -450,7 +452,7 @@ set to auto-fit. */
         font-weight: 500;
     }
 
-
+}
 
 
 @media (max-width: 750px) {
@@ -459,10 +461,7 @@ set to auto-fit. */
         display: none;
     }
     
-    .carousel-grid {
-        /* overflow: hidden; */
-        
-    }
+    
     
     
     .carousel {
@@ -514,6 +513,7 @@ set to auto-fit. */
     }
     
     .carousel-button {
+        
         position: absolute;
         background: none;
         border: none;
@@ -544,14 +544,31 @@ set to auto-fit. */
     
     .carousel-button.next {
         right: 1rem;
+        
     }
+
+    
 
 }
 
 
 
 
-/* ------------------grid------------------------ */
+/* ------------------map and weather------------------------ */
+
+.map-weather {
+    display: grid;
+    grid-template-rows: minmax(200px, 1fr);
+    grid-template-columns: 1fr 2fr;
+}
+
+@media (max-width: 750px) {
+    .map-weather{
+     grid-template-columns: 1fr;   
+
+    }
+    
+}
 
 
 
