@@ -580,48 +580,19 @@ set to auto-fit. */
 
 }
 
-@media (min-width: 641px) {
-    .footer-container{
-        justify-content: space-evenly;
-        
-    }
-    
-    .mw-card {
-        
-    }
-
-    .map-card {
-        height: auto;
-        width: 45%;
-    }
-
-    .weather-card {
-        width: 45%;
-        height: auto;
-    }
-}
-
-@media (min-width:801px) {
-    .map-card {
-        height: minamax(350px, auto);
-        width: 45%;
-    }
-
-    .weather-card {
-        width: 100%;
-        height: auto;
-    }
-
-    .footer-base{
-        width: 45%;
-    }
-}
-
 .footer-base {
-    display: flex;
-   
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+    /* justify-items: center; */
+
+}
+
+.symbol-aura {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 
@@ -638,7 +609,8 @@ set to auto-fit. */
     display: flex;
     height: 40px;
     align-content: center;
-    align;
+    
+   
     
 }
 
@@ -647,11 +619,67 @@ set to auto-fit. */
     
 }
 
-.symbol {
-    
+.mw-card > .links {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+.symbol {
+    display: flex;
+    
     height: 180px;
     width: 180px;
 }
 
+@media (min-width: 641px) {
+    .footer-container{
+        /* justify-content: space-evenly; */
+        
+    }
+        
+    .map-card {
+        height: auto;
+        width: 50%;
+    }
+
+    .weather-card {
+        width: 50%;
+        height: auto;
+    }
+
+    .mw-card > .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-evenly;
+    }
+}
+
+@media (min-width:801px) {
+    .map-card {
+        height: minamax(350px, auto);
+        width: 50%;
+    }
+
+    .weather-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-base{
+        width: 50%;
+    }
+}
+
+
+@media (min-width: 1001px) {
+    .footer-container{
+        display: flex;
+        justify-items: center;
+    }
+
+    .mw-card {
+        width: 33%;
+        height: 300px;
+    }
+}
