@@ -7,21 +7,23 @@
     <!-- inserir favicon -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="js/app.js"></script>
+    <script defer src="js/ajax.js"></script>
 </head>
 <body>
     <!-- barra de navegação -->
     <header class="header">
         
-        <nav class="navbar">
-            <a href="/" id="logo">Casa Paulina</a>
+        <nav class="navbar" id="nav">
+            <a href="/final" data-target="home" id="logo">Casa Paulina</a>
             <button class="hamburger"></button>
             <ul class="nav-list">
-                <li><a href="/quemSomos" class="dropdown-link">Quem somos</a></li>
-                <li><a href="/tour" class="dropdown-link">Tour pela casa</a></li>
-                <li><a href="/contato" class="dropdown-link">Galeria</a></li>
-                <li><a href="/contato" class="dropdown-link">Contato</a></li>  
-                                          
+                <li><a href="#" data-target="profile" class="dropdown-link shortcut">Quem somos</a></li>
+                <!-- <li><a href="/tour" class="dropdown-link">Tour pela casa</a></li>  will be added later-->
+                <li><a href="#" data-target="gallery" class="dropdown-link shortcut">Galeria</a></li>
+                <li><a href="#contact" class="dropdown-link">Contato</a></li>  
+                <!-- the shortcut class is used on ajax  -->
 
             </ul>
         </nav>
@@ -29,6 +31,8 @@
 
 
     <!-- jumbotron -->
+
+    <div id="content">
 
     <div class="hero">
         <div class="hero-image">
@@ -66,13 +70,13 @@
 
     <!-- link redirecionando para tour da casa -->
 
-    <div class="tour-grid">
+    <!-- <div class="tour-grid">
         <a href="/tour.html" class="tour-link"> Faça um tour pela casa!</a>
     </div>
-    
+     -->
     <!-- galeria em carrosel -->
     
-    <div class="carousel-grid">
+    <div class="carousel-grid" id="goToGallery">
         <div class="carousel" data-carousel>
             <button class="carousel-button prev" data-carousel-button="prev">&#8249;</button>
             <button class="carousel-button next" data-carousel-button="next">&#8250;</button>
@@ -150,17 +154,18 @@
             <img id="button-background" src="img\Fotos profissionais\_MG_2098.jpg" alt="">
         </div>
     </div>
-
-
-
-    <div class="weather-api">sdfsdf</div>
+    
+    
+    
+</div> 
+    <!-- end o dynamically html loading -->
 
     <!-- weather / location / contact-->
 
 
 
 
-    <div class="footer-container">
+    <div class="footer-container" id="contact">
         <!-- API de clima -->
         <div class="mw-card weather-card">
             <a class="weatherwidget-io" href="https://forecast7.com/pt/n27d60n48d55/florianopolis/" data-label_1="Florianópolis" data-label_2="Clima" data-font="Roboto Slab" data-icons="Climacons Animated" data-days="5" data-theme="clear" >Florianópolis Clima</a>
@@ -189,9 +194,8 @@
             </div>
         </div>
 
-    </div>
     
-
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
