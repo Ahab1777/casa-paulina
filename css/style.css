@@ -382,13 +382,7 @@ set to auto-fit. */
         display: none;
     }
 
-    /* .photo-grid {
-        display: grid;
-        gap: 3px;
-        
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        grid-auto-rows: auto-fit;
-    } */
+    
 
     .card {
         display: flex;
@@ -683,3 +677,64 @@ set to auto-fit. */
         height: 300px;
     }
 }
+
+
+/*---------------- full gallery ------------------------*/
+
+/* this first 3 media queries assure that the grid always has 3 or 4 columns with good picture size,
+since the link that leads to the gallery page need to be the last one of the grid and 
+cannot be set to stretch to more than one grid-block since the grid-template-column property is
+set to auto-fit. */
+
+
+/* this first 3 media queries assure that the grid always has 3 or 4 columns with good picture size,
+since the link that leads to the gallery page need to be the last one of the grid and 
+cannot be set to stretch to more than one grid-block since the grid-template-column property is
+set to auto-fit. */
+
+.photo-grid-gallery img {
+    border-radius: 5%;
+
+    animation: picIntro 700ms ease-out;
+    animation-fill-mode: backwards;
+}
+
+.photo-grid-gallery .card{
+    
+    border: none;
+}
+
+
+.photo-grid-gallery{
+    display: grid;
+    gap: 3px;
+    
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: auto-fit; 
+}
+
+
+
+@media (min-width: 1001px) {
+    .photo-grid-gallery{
+        display: grid;
+        gap: 3px;
+        
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: auto-fit; 
+    }
+
+}
+
+@media (min-width: 1500px) {
+    .photo-grid-gallery{
+        display: grid;
+        gap: 3px;
+        
+        grid-template-columns: repeat(4, minmax(300px, 1fr));
+        grid-auto-rows: auto-fit; 
+    }
+
+}
+
+
