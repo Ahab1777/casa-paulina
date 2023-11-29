@@ -7,7 +7,9 @@
     
 }
 
-
+#content {
+    margin-top: 70px;
+}
 
 @keyframes picIntro {
     from {
@@ -30,12 +32,9 @@
 
 }
 
-/* body {
-    margin: 0;
-    max-width: 100%
-} */
 
-/* header */
+
+/* --------------------- header----------------------- */
 
 .header {
     position: fixed;
@@ -173,27 +172,40 @@
 
 }
 
-/* hero */
+/*----------------------- hero -----------------------*/
 
 
 
-.hero-image {
+.hero {
     background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos profissionais/_MG_2054.jpg");
-    height: 500px;
+    height: 800px;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-
+    position: relative;
 }
 
-@media (max-width: 576px) {
-    .hero-image {
-        height: 30vh;
-                
+@media (min-width: 630px) and (max-width: 948px){
+    .hero {
+        height: 45vh;
     }
-
-    
 }
-    
+
+@media (max-width: 630px){
+    .hero {
+        height: 30vh;
+        background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos profissionais/small hero.jpg");
+
+    }
+}
+
+
+
+.hero-content {
+
+}
+
+
 
 
 /* -----------calendário & descrição--------------------- */
@@ -202,13 +214,14 @@
     
     display: grid;
     /* grid-template-rows: repeat(auto-fit, minmax(400px, 1fr)); */
-    grid-template-rows: minmax(400px, 1fr);
+    grid-template-rows: minmax(300px, 1fr);
     grid-template-columns: 1fr 2fr;
 }
 
 .calendar-item {
     align-self: center;   
     justify-self: center;
+    max-height: 380px;
 }
 
 
@@ -256,7 +269,7 @@
 }
 
 
-/* --------------------estrutura -----------------*/
+/* -------------------------estrutura -----------------*/
 
 .estrutura-grid {
     height: 100%;
@@ -271,7 +284,9 @@
 .estrutura-item {
     height: auto;
     /* padding: 3px; */
-    
+    position:relative;
+    width: 100%;
+    height: 100%;
 }
 
 .estrutura-item img {
@@ -280,23 +295,56 @@
     border-radius: 5%;
     animation: picIntro 700ms ease-out;
     animation-fill-mode: backwards;
+    opacity: 0.7;
+    
 }
 
 @media (max-width: 750px) {
     .estrutura-grid {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+        
     }
+
+    .estrutura-item {
+        padding: 2.5px 5px;
+    }
+
     .estrutura-item img {
         height: auto;
         width: 100vw;
+        
     }
     
 }
 
+.estrutura-texto {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 40%;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    
+}
+
+.estrutura-texto li {
+    background-color: transparent; 
+    font-weight: 1000;
+    font-family: sans-serif;
+    font-size: 4.3vw;
+}
+
+@media (min-width: 751px ){
+    .estrutura-texto li {
+        font-size: 1.4vw;;
+    }
+}
+
+
 /* tour da casa */
 
-.tour-grid {
+/* .tour-grid {
     height: 100px;
     position: relative;
 }
@@ -311,7 +359,7 @@
     font-family: sans-serif;
 
     /* centralizar */
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
@@ -332,7 +380,7 @@
 .tour-link:hover::before {
     width: 100%;
     
-}
+} */
 
 /* --------------------------galeria------------------------ */
 /* --------------carrossel---------------- */
@@ -375,6 +423,9 @@ set to auto-fit. */
 }
 
 
+.slide img{
+    border-radius: 5%;
+}
 
 @media (min-width: 751px){
 
@@ -382,7 +433,9 @@ set to auto-fit. */
         display: none;
     }
 
-    
+    .gallery-link-mobile{
+        display: none;
+    }
 
     .card {
         display: flex;
@@ -456,7 +509,9 @@ set to auto-fit. */
     }
     
     
-    
+    .carousel-grid{
+        padding: 2.5px 5px;
+    }
     
     .carousel {
         width: 100%;
@@ -545,6 +600,33 @@ set to auto-fit. */
 
 }
 
+
+.gallery-link-mobile, .gallery-title, .gallery-title-mobile {
+    position: relative;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: sans-serif;
+}
+
+.gallery-link-mobile::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: 0.2s;
+}
+
+.gallery-link-mobile:hover::before {
+    width: 100%;
+    
+}
 
 
 
@@ -686,11 +768,12 @@ since the link that leads to the gallery page need to be the last one of the gri
 cannot be set to stretch to more than one grid-block since the grid-template-column property is
 set to auto-fit. */
 
-
-/* this first 3 media queries assure that the grid always has 3 or 4 columns with good picture size,
-since the link that leads to the gallery page need to be the last one of the grid and 
-cannot be set to stretch to more than one grid-block since the grid-template-column property is
-set to auto-fit. */
+.gallery-title {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 700;
+    
+}
 
 .photo-grid-gallery img {
     border-radius: 5%;
@@ -738,3 +821,20 @@ set to auto-fit. */
 }
 
 
+/* this next two media queries are meant to take out one of the images (ID = disappear-img) from the gallery depending
+on the screen size so that the last row does not have any missing pictures*/
+@media (min-width: 621px) and (max-width: 823px){
+    
+    #disappear-img {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1001px) and (max-width: 1223px){
+    
+    #disappear-img {
+        display: none;
+    }
+
+}

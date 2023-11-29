@@ -17,3 +17,18 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(function(){
+    const trigger = $('.gallery-link'),
+    container = $('#content');
+
+
+    trigger.on('click', function(){
+    
+        const $this = $(this),
+        target = $this.data('target');
+
+        container.load(target + '.html');
+
+        return false;
+    });
+});
