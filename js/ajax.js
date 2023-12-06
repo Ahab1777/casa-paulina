@@ -32,3 +32,22 @@ $(document).ready(function(){
         return false;
     });
 });
+
+
+//"more pictures" link
+
+$(document).ready(function(){
+    const trigger = $('.gallery-title-mobile .shortcut'),
+    container = $('#content');
+
+
+    trigger.on('click', function(){
+    
+        const $this = $(this),
+        target = $this.data('target');
+
+        container.load(target + '.html');
+
+        return false;
+    });
+});

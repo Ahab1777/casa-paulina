@@ -12,6 +12,7 @@
     <script defer src="js/ajax.js"></script>
 </head>
 <body>
+    
     <!-- barra de navegação -->
     <header class="header">
         
@@ -29,6 +30,15 @@
         </nav>
     </header>
 
+     <!-- image pop up -->
+
+     <div class="popUpImg">
+         <div class="full-img" id="fullImgBox">
+            <img src="img\Fotos profissionais\_MG_1756.jpg" id="fullImg">
+            <span onclick="closeFullImg()">X</span>
+        </div>
+
+     </div>
 
     <!-- jumbotron -->
 
@@ -43,11 +53,13 @@
         <!-- calendário | descrição -->
     
         <div class="calendar-grid calendar-container">
-            <div class="calendar-item">
-    
-                <script id='vr_Mjk1OC0tNjU0Y2Q5OTQ3YzIxMg=='>window.options = { api_key:'Mjk1OC0tNjU0Y2Q5OTQ3YzIxMg==',height:'500px',width:'100%',min_height:'300px'};var s = document.createElement('script');s.src = "https://www.vrcalendarsync.com/embed.js";s.async = true; document.body.appendChild(s);</script>
-    
-            </div>    
+            
+                <div class="calendar-item">
+        
+                    <script id='vr_Mjk1OC0tNjU0Y2Q5OTQ3YzIxMg=='>window.options = { api_key:'Mjk1OC0tNjU0Y2Q5OTQ3YzIxMg==',height:'500px',width:'100%',min_height:'300px'};var s = document.createElement('script');s.src = "https://www.vrcalendarsync.com/embed.js";s.async = true; document.body.appendChild(s);</script>
+        
+                </div>
+            
             <div class="intro">
                 <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga itaque numquam harum atque reiciendis eum aspernatur, saepe, inventore reprehenderit possimus eaque dicta voluptates, quis officia beatae. Mollitia ratione eaque deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae ea vel eum nostrum molestias ab est, atque maiores quibusdam repellendus eveniet consectetur, sed fugiat suscipit praesentium incidunt veniam ratione!</p>
             </div>
@@ -88,16 +100,13 @@
             </div>
         </div>
     
-        <!-- link redirecionando para tour da casa -->
     
-        <!-- <div class="tour-grid">
-            <a href="/tour.html" class="tour-link"> Faça um tour pela casa!</a>
-        </div>
-         -->
+       
         <!-- galeria em carrosel -->
         
         <div class="carousel-grid" id="goToGallery">
-            <div class="gallery-title"> &#8592 Galeria &#8594</div>
+            <div class="gallery-title-mobile"> &#8592 Galeria &#8594</div>
+            <div class="gallery-title">Galeria</div>
             <div class="carousel" data-carousel>
                 <button class="carousel-button prev" data-carousel-button="prev">&#8249;</button>
                 <button class="carousel-button next" data-carousel-button="next">&#8250;</button>
@@ -132,46 +141,47 @@
                     </li>
                 </ul>
             </div>
-            <div class="gallery-title">
-                <a class="gallery-link-mobile" data-target="gallery" href="/gallery">Veja mais fotos</a>
+            <div class="gallery-title-mobile">
+                <a class="gallery-link-mobile shortcut" data-target="gallery" href="/gallery">Veja mais fotos</a>
             </div>
         </div>
         
         <!-- galeria em grid -->
         
+
         <div class="photo-grid">
             <div class="card">
-                <img id="pic-1" src="img\Fotos profissionais\_MG_1756.jpg" alt="">
+                <img id="pic-1" src="img\Fotos profissionais\_MG_1756.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">
-                <img id="pic-2" src="img\Fotos profissionais\_MG_1786.jpg" alt="">
+                <img id="pic-2" src="img\Fotos profissionais\_MG_1786.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">
-                <img id="pic-3" src="img\Fotos profissionais\_MG_1906.jpg" alt="">
+                <img id="pic-3" src="img\Fotos profissionais\_MG_1906.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">
-                <img id="pic-4" src="img\Fotos profissionais\_MG_1814.jpg" alt="">
+                <img id="pic-4" src="img\Fotos profissionais\_MG_1814.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">
-                <img id="pic-6" src="img\Fotos profissionais\_MG_1895.jpg" alt="">
+                <img id="pic-6" src="img\Fotos profissionais\_MG_1895.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">
-                <img id="pic-5" src="img\Fotos profissionais\_MG_1955.jpg" alt="">
+                <img id="pic-5" src="img\Fotos profissionais\_MG_1955.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">
-                <img id="pic-7" src="img\Fotos profissionais\_MG_2077.jpg" alt="">
+                <img id="pic-7" src="img\Fotos profissionais\_MG_2077.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">
-                <img id="pic-8" src="img\Fotos profissionais\_MG_1911.jpg" alt="">
+                <img id="pic-8" src="img\Fotos profissionais\_MG_1911.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">            
-                <img id="pic-9" src="img\Fotos profissionais\_MG_2098.jpg" alt="">
+                <img id="pic-9" src="img\Fotos profissionais\_MG_2098.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">            
-                <img id="pic-9" src="img\Fotos profissionais\_MG_2098.jpg" alt="">
+                <img id="pic-9" src="img\Fotos profissionais\_MG_2098.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card">            
-                <img id="pic-9" src="img\Fotos profissionais\_MG_2098.jpg" alt="">
+                <img id="pic-9" src="img\Fotos profissionais\_MG_2098.jpg" alt="" onclick="openFullImg(this.src)">
             </div>
             <div class="card button">
                 <a class="gallery-link" data-target="gallery" href="/gallery">Veja mais fotos</a>

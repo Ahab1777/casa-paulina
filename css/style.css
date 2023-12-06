@@ -9,6 +9,7 @@
 
 #content {
     margin-top: 70px;
+    padding: 0px 2.5px;
 }
 
 @keyframes picIntro {
@@ -51,7 +52,6 @@
 }
 
 .navbar {
-    max-width: 1280px;
     width: 100%;
 }
 
@@ -222,6 +222,7 @@
     align-self: center;   
     justify-self: center;
     max-height: 380px;
+    padding-bottom: 400px;
 }
 
 
@@ -263,9 +264,9 @@
         grid-row: 1
     }
 
-    /* .calendar-grid {
-        height: 600px;
-    } */
+    .calendar-item {
+        
+    }
 }
 
 
@@ -429,7 +430,7 @@ set to auto-fit. */
 
 @media (min-width: 751px){
 
-    .carousel{
+    .carousel, .gallery-title-mobile{
         display: none;
     }
 
@@ -451,8 +452,29 @@ set to auto-fit. */
     .card > img {
         border-radius: 5%;
 
-        animation: picIntro 700ms ease-out;
-        animation-fill-mode: backwards;
+        /* animation: picIntro 700ms ease-out; */
+        /* animation-fill-mode: backwards; */
+    }
+
+
+    @keyframes picHover {
+        from {
+            opacity: .70;
+            transform: scale(.99);
+            /* filter: contrast(50%); */
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+            /* filter: contrast(100%); */
+        }
+    }
+
+
+
+    .card > img:hover{
+        cursor: pointer;
+        animation: picHover 900ms ease-in-out;
     }
 
 
@@ -504,7 +526,7 @@ set to auto-fit. */
 
 @media (max-width: 750px) {
     
-    .photo-grid {
+    .photo-grid, .gallery-title {
         display: none;
     }
     
@@ -566,7 +588,7 @@ set to auto-fit. */
         position: absolute;
         background: none;
         border: none;
-        font-size: 3rem;
+        font-size: 5rem;
         z-index: 3;
         top: 50%;
         transform: translateY(-50%);
@@ -575,6 +597,7 @@ set to auto-fit. */
         border-radius: .25rem;
         padding: 0 .5rem;
         background-color: rgba(0, 0, 0, .1);
+        padding-bottom: 20px;
     }
     
     .carousel-button:hover,
@@ -610,6 +633,7 @@ set to auto-fit. */
     margin-left: 20px;
     margin-right: 20px;
     font-family: sans-serif;
+    text-align: center;
 }
 
 .gallery-link-mobile::before {
@@ -628,7 +652,47 @@ set to auto-fit. */
     
 }
 
+.gallery-link-mobile {
+    padding: 5px 0px;
+}
 
+
+.full-img {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0 , 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+
+    z-index: 100;
+}
+
+.full-img img{
+    width: 90%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* @media to prevent the popup to appear when the popup would be smaller than the current screen width */
+@media (max-width: 422px) {
+    .popUpImg{
+        display: none;
+    }
+}
 
 /* ------------------map/weather/links------------------------ */
 
@@ -636,11 +700,20 @@ set to auto-fit. */
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    margin: 5px;
+}
+
+.footer-container > div {
+    margin:;
 }
 
 .mw-card {
     height: 100%;
-    width: 100%;
+    width: 100vw;
+    margin: 0px;
+    padding: 10px 0px;
+    overflow: hidden;
+    
 }
 
 .map {
@@ -708,21 +781,20 @@ set to auto-fit. */
     width: 180px;
 }
 
+
+
 @media (min-width: 641px) {
     .footer-container{
         /* justify-content: space-evenly; */
         
     }
         
-    .map-card {
+    .map-card, .weather-card {
         height: auto;
         width: 50%;
     }
 
-    .weather-card {
-        width: 50%;
-        height: auto;
-    }
+    
 
     .mw-card > .links {
         display: flex;
@@ -757,8 +829,16 @@ set to auto-fit. */
     .mw-card {
         width: 33%;
         height: 300px;
+        padding: 10px 10px;
     }
 }
+
+
+@media (max-width: 750px){
+
+}
+
+.footer-container
 
 
 /*---------------- full gallery ------------------------*/
@@ -768,7 +848,7 @@ since the link that leads to the gallery page need to be the last one of the gri
 cannot be set to stretch to more than one grid-block since the grid-template-column property is
 set to auto-fit. */
 
-.gallery-title {
+.gallery-title, .gallery-title-mobile {
     text-align: center;
     font-family: sans-serif;
     font-weight: 700;
@@ -778,8 +858,8 @@ set to auto-fit. */
 .photo-grid-gallery img {
     border-radius: 5%;
 
-    animation: picIntro 700ms ease-out;
-    animation-fill-mode: backwards;
+    /* animation: picIntro 700ms ease-out;
+    animation-fill-mode: backwards; */
 }
 
 .photo-grid-gallery .card{
