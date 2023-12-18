@@ -62,6 +62,9 @@
     font-weight: 700;
 }
 
+
+
+
 .nav-list {
     display: flex;
     list-style: none;
@@ -78,7 +81,7 @@
     color: #000;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-right: 20px;
     font-family: sans-serif;
 }
@@ -183,6 +186,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    
 }
 
 @media (min-width: 630px) and (max-width: 948px){
@@ -199,24 +203,97 @@
     }
 }
 
+.hero-content{
+    height: 100%;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-
-.hero-content {
-
+#heroSymbol {
+    width: auto;
+    height: 50%;
+    background-color: transparent;
+    /* position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%); */
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
 }
 
 
-
-
 /* -----------calendário & descrição--------------------- */
+
+#whatsIcon {
+    width: 35px;
+   }
+
+.whatsBar {
+    margin: auto;
+    width: 210px;
+    padding: 10px;
+    
+}
+
+.whatsBarStrip {
+    width: 100%;
+    position: sticky;
+    top: 50px;
+    z-index: 999;
+    padding: 10px 0px;
+}
+
+.whatsBar a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+
 
 .calendar-grid {
     
     display: grid;
     /* grid-template-rows: repeat(auto-fit, minmax(400px, 1fr)); */
     grid-template-rows: minmax(300px, 1fr);
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
+
 }
+
+@media (min-width: 1001px) {
+    .calendar-grid {
+    grid-template-rows: minmax(200px, 1fr);
+    padding-left: 10vw;
+    padding-right: 10vw;
+    }
+}
+
+
+@media (max-width: 599px) {
+    .calendar-grid {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    .calendar-grid {
+    padding-left: 20vw;
+    padding-right: 20vw;
+    }
+}
+
+@media (min-width: 1301px) {
+    .calendar-grid {
+    padding-left: 20vw;
+    padding-right: 20vw;
+    }
+}
+
 
 .calendar-item {
     align-self: center;   
@@ -236,7 +313,7 @@
 }
 
 .intro {
-    width: 100%;
+    
     justify-content: center;
     align-content: center;
     text-align: justify;
@@ -526,8 +603,15 @@ set to auto-fit. */
 
 @media (max-width: 750px) {
     
+    .gallery-title-mobile {
+        margin-top: 20px;
+        margin-bottom: 20px;
+       ;
+    }
+
     .photo-grid, .gallery-title {
         display: none;
+        
     }
     
     
@@ -624,9 +708,16 @@ set to auto-fit. */
 }
 
 
+.gallery-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+}
+
+
 .gallery-link-mobile, .gallery-title, .gallery-title-mobile {
     position: relative;
-    font-size: 18px;
+    /* font-size: 3.7vw; */
     color: #000;
     text-decoration: none;
     font-weight: 700;
@@ -687,6 +778,19 @@ set to auto-fit. */
     background-color: transparent;
 }
 
+@media (max-width: 550px) {
+    .gallery-link-mobile, .gallery-title, .gallery-title-mobile{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 551px) {
+    .gallery-link-mobile, .gallery-title, .gallery-title-mobile{
+        font-size: 2.5vh;
+    }
+}
+
+
 /* @media to prevent the popup to appear when the popup would be smaller than the current screen width */
 @media (max-width: 422px) {
     .popUpImg{
@@ -731,8 +835,8 @@ set to auto-fit. */
 
 .footer-base {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 190px 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     /* justify-items: center; */
 
@@ -781,7 +885,15 @@ set to auto-fit. */
     width: 180px;
 }
 
+.symbol img{
+    margin-left: auto;
+  margin-right: auto;
+}
 
+.footer-logo {
+    height: 150px;
+    width: auto;
+}
 
 @media (min-width: 641px) {
     .footer-container{
@@ -838,7 +950,10 @@ set to auto-fit. */
 
 }
 
-.footer-container
+.footer-info {
+    text-align: center;
+    font-size: small;
+}
 
 
 /*---------------- full gallery ------------------------*/
@@ -917,4 +1032,55 @@ on the screen size so that the last row does not have any missing pictures*/
         display: none;
     }
 
+}
+
+
+/*  profile */
+
+.profile {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+
+.profile-pic{
+    margin: auto;
+}
+
+.profile-pic img {
+    width: 40vw;
+}
+
+
+.profile-text{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (max-width: 750px) {
+    .profile{
+        grid-template-rows: minmax(200px, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .profile-pic-other2{
+        display: none;
+    }
+
+    .profile-pic img {
+        width: 90vw;
+    }
+
+    .profile-text{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 751px) {
+    .profile-pic-other1{
+        display: none;
+    }
 }
