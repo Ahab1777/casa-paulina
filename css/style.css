@@ -71,7 +71,7 @@
     align-items: center;
     margin-right: 10px;
     margin-bottom: 0;
-    z-index: 99;
+    z-index: 999;
 }
 
 
@@ -180,13 +180,13 @@
 
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos profissionais/_MG_2054.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos 2/DJI_0070-Aprimorado-NRcropped.jpg");
     height: 800px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    
+    /* img\Fotos 2\DJI_0037.jpg */
 }
 
 @media (min-width: 630px) and (max-width: 948px){
@@ -198,7 +198,7 @@
 @media (max-width: 630px){
     .hero {
         height: 30vh;
-        background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos profissionais/small hero.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos 2/DJI_0070-Aprimorado-NRcropped.jpg");
 
     }
 }
@@ -242,7 +242,7 @@
     width: 100%;
     position: sticky;
     top: 50px;
-    z-index: 999;
+    z-index: 10;
     padding: 10px 0px;
 }
 
@@ -579,6 +579,7 @@ set to auto-fit. */
         position: absolute;
         width: 100%;
         opacity: 50%;
+        height: 100%;
     }
 
     .gallery-link {
@@ -1051,12 +1052,14 @@ on the screen size so that the last row does not have any missing pictures*/
 
 .profile-pic img {
     width: 40vw;
+    border-radius: 5%;
 }
 
 
 .profile-text{
     margin-left: 10px;
     margin-right: 10px;
+    text-align: center;
 }
 
 @media (max-width: 750px) {
@@ -1071,6 +1074,7 @@ on the screen size so that the last row does not have any missing pictures*/
 
     .profile-pic img {
         width: 90vw;
+        
     }
 
     .profile-text{
