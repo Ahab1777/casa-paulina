@@ -180,7 +180,7 @@
 
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos 2/DJI_0070-Aprimorado-NRcropped.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos 2/DSCF7326.jpg");
     height: 800px;
     background-position: center;
     background-repeat: no-repeat;
@@ -198,7 +198,7 @@
 @media (max-width: 630px){
     .hero {
         height: 30vh;
-        background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos 2/DJI_0070-Aprimorado-NRcropped.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0,0,0,0.5) ), url("../img/Fotos 2/DSCF7326.jpg");
 
     }
 }
